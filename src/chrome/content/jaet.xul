@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
-<overlay id="pp-jaet" 
+<overlay id="mot-jaet" 
          xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
     <menupopup id="menu_ViewPopup">
-        <menuitem label="Production Planner" type="checkbox"
-                  panel="pp" chrome="chrome://pp/content/pp.xul"/>
+        <menuitem label="Market Op Tool" type="checkbox"
+                  panel="mot" chrome="chrome://mot/content/mot.xul"/>
     </menupopup>
 </overlay>
 

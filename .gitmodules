@@ -1,0 +1,3 @@
+[submodule "src/components/eve-api"]
+	path = src/components/eve-api
+	url = git://github.com/aragaer/EveAPI.git

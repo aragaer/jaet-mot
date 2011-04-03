@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
 
-<window id="main" title="JAET-PP" width="800" height="600"
+<window id="main" title="JAET-MOT" width="800" height="600"
 	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
 	onload="onLoad();" onclose="return confirmQuit()"
 	persist="screenX screenY width height sizemode">
@@ -39,6 +39,6 @@
             </menubar>
         </toolbaritem>
     </toolbar>
-    <iframe src="chrome://pp/content/pp.xul" flex="1"/>
+    <iframe src="chrome://mot/content/mot.xul" flex="1"/>
 </window>
 

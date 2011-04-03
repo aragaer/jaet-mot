@@ -1,4 +1,4 @@
-pref("toolkit.defaultChromeURI", "chrome://wrapper/content/pp_wrapper.xul");
+pref("toolkit.defaultChromeURI", "chrome://wrapper/content/mot_wrapper.xul");
 pref("general.useragent.locale", "en_US");    		
 pref("browser.preferences.instantApply", true);
 pref("browser.dom.window.dump.enabled", true);
