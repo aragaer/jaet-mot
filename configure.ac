@@ -1,5 +1,5 @@
 AC_PREREQ([2.63])
-AC_INIT([JAET-PP], [0.2], [aragaer@gmail.com])
+AC_INIT([JAET-MOT], [0.1], [aragaer@gmail.com])
 AC_CONFIG_AUX_DIR([config])
 AM_INIT_AUTOMAKE([-Wall -Werror foreign])
 AC_CONFIG_SRCDIR([src/srcstamp])
