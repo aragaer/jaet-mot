@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="chrome://jaet-mot/skin/overlay.css" type="text/css"?>
+<!DOCTYPE overlay SYSTEM "chrome://jaet-mot/locale/overlay.dtd">
+<overlay id="jaet-mot-overlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+    <stringbundleset id="stringbundleset">
+        <stringbundle id="jaet-mot-strings" src="chrome://jaet-mot/locale/overlay.properties"/>
+    </stringbundleset>
+
+    <menupopup id="menu_ViewPopup">
+        <menuitem label="&jaet-mot.label;" type="checkbox"
+                  panel="mot" chrome="chrome://jaet-mot/content/mot.xul"/>
+    </menupopup>
+</overlay>

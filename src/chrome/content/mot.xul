@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://jaet-mot/skin/mop.css" type="text/css"?>
+<window xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" orient="horizontal">
+<grid>
+    <columns>
+        <column />
+        <column />
+    </columns>
+
+    <rows>
+        <row style="-moz-box-align: center">
+            <label control="item" value="Item"/>
+            <textbox value="Item" id="item"/>
+        </row>
+        <row style="-moz-box-align: center">
+            <label control="location" value="Location"/>
+            <textbox value="Location" id="location"/>
+        </row>
+        <row style="-moz-box-align: center">
+            <label control="date" value="Start date" />
+            <datepicker type="popup" id="date"/>
+        </row>
+    </rows>
+</grid>
+<textbox multiline="true" flex="1"/>
+</window>

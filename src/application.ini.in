@@ -1,0 +1,13 @@
+[App]
+Vendor=aragaer
+Name=jaet-pp
+Version=0.2
+BuildID=@BUILDID@
+ID={182b8980-bf7f-466d-81f3-506f41fec86c}
+
+[Gecko]
+MinVersion=1.9.1
+MaxVersion=2.*
+
+[XRE]
+EnableExtensionManager=1

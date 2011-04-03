@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+
+<prefwindow id="preferences" title="Preferences"
+            windowtype="jaet-preferences"
+            type="prefwindow"
+            flex="1" width="600" height="300"
+            xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+     <prefpane label="File paths" id="paths">
+<script language="javascript"><![CDATA[
+function onPick(id, wantdir) {
+    var tx = document.getElementById(id+"-path");
+    var fp = Cc["@mozilla.org/filepicker;1"].createInstance(Ci.nsIFilePicker);
+    fp.init(window, "Static dump path", wantdir ? fp.modeGetFolder : fp.modeOpen);
+    fp.appendFilters(fp.filterAll);
+    fp.displayDirectory = Cc["@mozilla.org/file/directory_service;1"].
+            getService(Ci.nsIProperties).get("CurProcD", Ci.nsIFile);
+    fp.defaultString = tx.value;
+    fp.show();
+    if (fp.file) {
+        tx.value = fp.file.path;
+        document.getElementById('paths').userChangedValue(tx);
+    }
+}
+]]></script>
+        <preferences>
+            <preference id="static-dump" type="unichar" name="eve.static_dump_path"/>
+        </preferences>
+
+        <label value="Static dump path" />
+        <hbox>
+            <textbox preference="static-dump" id="static-path" flex="1"/>
+            <button onclick="onPick('static', false)" label="Browse..."/>
+        </hbox>
+
+    </prefpane>
+
+     <script type="application/x-javascript" src="chrome://pp/content/general.js"/>
+</prefwindow>
+

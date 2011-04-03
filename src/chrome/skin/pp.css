@@ -1,0 +1,11 @@
+tabpanel.project {
+    -moz-binding: url('chrome://pp/content/pp.xml#project_box') !important;
+}
+splitter grippy {
+    background-color:red;
+}
+
+splitter[state='collapsed'] grippy {
+    background-color:green;
+}
+

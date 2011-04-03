@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+
+<window id="main" title="JAET-PP" width="800" height="600"
+	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	onload="onLoad();" onclose="return confirmQuit()"
+	persist="screenX screenY width height sizemode">
+
+<script type="application/x-javascript" src="chrome://pp/content/general.js"/>
+	
+<script type="application/x-javascript" src="chrome://global/content/globalOverlay.js"/>
+<script type="application/x-javascript" src="chrome://global/content/nsDragAndDrop.js"/>
+<script type="application/x-javascript" src="chrome://pp/content/actions.js"/>
+
+    <command id="File:Exit" oncommand="quit()"/>
+    <command id="Settings:Preferences" oncommand="setupPreferences()"/>
+    <command id="Tools:Plugins" oncommand="openExtManager()"/>
+
+    <toolbar id="main-toolbar">
+        <toolbaritem>
+            <menubar id="main-menubar" statusbar="statusbar-display"
+                     style="border:0px;padding:0px;margin:0px;float:left;">
+                <menu label="File" accesskey="F">
+                    <menupopup id="menu_FilePopup">
+                        <menuitem label="Exit" accesskey="X"
+                                  command="File:Exit"/>
+                    </menupopup>
+                </menu>
+                <menu label="Tools" accesskey="T">
+                    <menupopup id="menu_ToolsPopup">
+                        <menuitem label="Preferences"
+                                  accesskey="P"
+                                  command="Settings:Preferences"/>
+                        <menuitem label="Extensions"
+                                  accesskey="x"
+                                  command="Tools:Plugins"/>
+                    </menupopup>
+                </menu>
+            </menubar>
+        </toolbaritem>
+    </toolbar>
+    <iframe src="chrome://pp/content/pp.xul" flex="1"/>
+</window>
+
