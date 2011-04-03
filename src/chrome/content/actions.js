@@ -52,6 +52,6 @@ function openPreferences(paneID) {
             win.document.documentElement.showPane(pane);
         }
     } else 
-        openDialog("dialogs/preferences.xul", "Preferences", features, paneID);
+        openDialog("chrome://mot/content/dialogs/preferences.xul", "Preferences", features, paneID);
 }
 

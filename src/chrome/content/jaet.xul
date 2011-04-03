@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-<overlay id="mot-jaet" 
-         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
-    <menupopup id="menu_ViewPopup">
-        <menuitem label="Market Op Tool" type="checkbox"
-                  panel="mot" chrome="chrome://mot/content/mot.xul"/>
-    </menupopup>
-</overlay>
-

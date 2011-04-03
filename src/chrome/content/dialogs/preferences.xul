@@ -35,6 +35,6 @@ function onPick(id, wantdir) {
 
     </prefpane>
 
-     <script type="application/x-javascript" src="chrome://pp/content/general.js"/>
+     <script type="application/x-javascript" src="chrome://mot/content/general.js"/>
 </prefwindow>
 

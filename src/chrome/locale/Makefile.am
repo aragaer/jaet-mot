@@ -1,1 +1,1 @@
-SUBDIRS=branding
+SUBDIRS=branding en-US

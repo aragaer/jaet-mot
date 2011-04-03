@@ -6,11 +6,11 @@
 	onload="onLoad();" onclose="return confirmQuit()"
 	persist="screenX screenY width height sizemode">
 
-<script type="application/x-javascript" src="chrome://pp/content/general.js"/>
+<script type="application/x-javascript" src="chrome://mot/content/general.js"/>
 	
 <script type="application/x-javascript" src="chrome://global/content/globalOverlay.js"/>
 <script type="application/x-javascript" src="chrome://global/content/nsDragAndDrop.js"/>
-<script type="application/x-javascript" src="chrome://pp/content/actions.js"/>
+<script type="application/x-javascript" src="chrome://mot/content/actions.js"/>
 
     <command id="File:Exit" oncommand="quit()"/>
     <command id="Settings:Preferences" oncommand="setupPreferences()"/>

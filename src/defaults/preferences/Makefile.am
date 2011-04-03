@@ -1,4 +1,4 @@
 #!/bin/sh
 # @configure_input@
 include $(top_srcdir)/xpt.mk
-pref_DATA=debug.js pp.js
+pref_DATA=debug.js mot.js

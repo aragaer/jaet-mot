@@ -12,6 +12,7 @@ AC_CONFIG_FILES([Makefile
                  src/chrome/content/dialogs/Makefile
                  src/chrome/locale/Makefile
                  src/chrome/locale/branding/Makefile
+                 src/chrome/locale/en-US/Makefile
                  src/chrome/skin/Makefile
                  src/components/Makefile
                  src/components/eve-api/Makefile

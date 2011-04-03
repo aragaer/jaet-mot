@@ -1,17 +1,8 @@
-content pp chrome/content/
+content mot chrome/content/
 content wrapper .
-skin pp classic/1.0 chrome/skin/
-overlay chrome://jaet/content/jaet.xul chrome://pp/content/jaet.xul
-locale branding en-US locale/branding/
-
-component {a3bce6bb-570f-450a-96e5-567d688bd398} components/eve-item-autocomplete.js
-contract @mozilla.org/autocomplete/search;1?name=item-type-autocomplete {a3bce6bb-570f-450a-96e5-567d688bd398}
-
-component {0e3e8511-87ad-4fa7-80cf-386e014e1f8a} components/eve-item-autocomplete.js
-contract @mozilla.org/autocomplete/search;1?name=item-type-buildable-autocomplete {0e3e8511-87ad-4fa7-80cf-386e014e1f8a}
-
-component {4542e5b1-a461-49b4-bd03-a631f791f704} components/eve-item-autocomplete.js
-contract @mozilla.org/autocomplete/item-type-result;1 {4542e5b1-a461-49b4-bd03-a631f791f704}
+skin mot classic/1.0 chrome/skin/
+overlay chrome://jaet/content/jaet.xul chrome://mot/content/overlay.xul
+locale branding en-US chrome/locale/branding/
+locale mot en-US chrome/locale/en-US/
 
 manifest components/eve-api/eveapi.manifest
-manifest components/eve-central/evecentral.manifest
