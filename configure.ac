@@ -14,8 +14,6 @@ AC_CONFIG_FILES([Makefile
                  src/chrome/locale/branding/Makefile
                  src/chrome/skin/Makefile
                  src/components/Makefile
-                 src/components/eve-api/Makefile
-                 src/components/eve-central/Makefile
                  src/defaults/Makefile
                  src/defaults/preferences/Makefile])
 
