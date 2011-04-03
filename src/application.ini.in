@@ -1,9 +1,9 @@
 [App]
 Vendor=aragaer
-Name=jaet-pp
-Version=0.2
+Name=jaet-mot
+Version=0.1
 BuildID=@BUILDID@
-ID={182b8980-bf7f-466d-81f3-506f41fec86c}
+ID={f77e4dc1-2133-4bd8-931b-142b05f9f4b0}
 
 [Gecko]
 MinVersion=1.9.1

@@ -1,14 +1,20 @@
 <?xml version="1.0"?>
 <?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
 <?xml-stylesheet href="chrome://mot/skin/mot.css" type="text/css"?>
-<window xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" orient="horizontal">
+<window xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        orient="horizontal" onload="mot_onLoad()">
+<script language="javascript" src="chrome://mot/content/general.js" />
+<script language="javascript" src="chrome://mot/content/mot.js" />
 <grid>
     <columns>
         <column />
         <column />
     </columns>
-
     <rows>
+        <row style="-moz-box-align: center">
+            <label control="char" value="Character"/>
+            <menulist id="char" />
+        </row>
         <row style="-moz-box-align: center">
             <label control="item" value="Item"/>
             <textbox value="Item" id="item"/>

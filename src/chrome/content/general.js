@@ -1,7 +1,5 @@
 const Cc = Components.classes;
 const Ci = Components.interfaces;
-const Prefs = Cc["@mozilla.org/preferences-service;1"].
-        getService(Ci.nsIPrefBranch);
 Components.utils.import("resource://gre/modules/Services.jsm");
 
 const MAIN = window.top;
@@ -37,17 +35,25 @@ function printError(objError) {
             
 function getBoolPref(prefname, def) {
     try {
-        return Prefs.getBoolPref(prefname);
+        return Services.prefs.getBoolPref(prefname);
     } catch (er) {
         return def;
-    } 
+    }
 }
 
 function getCharPref(prefname, def) {
     try {
-        return Prefs.getCharPref(prefname);
+        return Services.prefs.getCharPref(prefname);
     } catch (er) {
         return def;
-    } 
+    }
+}
+
+function getIntPref(prefname, def) {
+    try {
+        return Services.prefs.getIntPref(prefname);
+    } catch (er) {
+        return def;
+    }
 }
 
