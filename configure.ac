@@ -8,12 +8,13 @@ AC_CONFIG_FILES([Makefile
                  src/application.ini
                  src/chrome/Makefile
                  src/chrome/content/Makefile
-                 src/chrome/content/img/Makefile
                  src/chrome/content/dialogs/Makefile
                  src/chrome/locale/Makefile
                  src/chrome/locale/branding/Makefile
                  src/chrome/locale/en-US/Makefile
                  src/chrome/skin/Makefile
+                 src/chrome/wrapper/Makefile
+                 src/chrome/wrapper/img/Makefile
                  src/components/Makefile
                  src/components/eve-api/Makefile
                  src/defaults/Makefile

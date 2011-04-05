@@ -38,6 +38,12 @@ function openExtManager() {
             "", "chrome,menubar,extra-chrome,toolbar,dialog=no,resizable");
 }
 
+function setupApiKeys() {
+    println("API keys activated.");
+    openDialog("chrome://wrapper/content/dialogs/api.xul", "",
+            "chrome,menubar,extra-chrome,toolbar,dialog=no,resizable");
+}
+
 function openPreferences(paneID) {
     var instantApply = getBoolPref("browser.preferences.instantApply", false);
     var features = "chrome,titlebar,toolbar,centerscreen" +
@@ -52,6 +58,6 @@ function openPreferences(paneID) {
             win.document.documentElement.showPane(pane);
         }
     } else 
-        openDialog("chrome://mot/content/dialogs/preferences.xul", "Preferences", features, paneID);
+        openDialog("chrome://wrapper/content/dialogs/preferences.xul", "Preferences", features, paneID);
 }
 

@@ -6,7 +6,33 @@
             type="prefwindow"
             flex="1" width="600" height="300"
             xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
-     <prefpane label="File paths" id="paths">
+    <prefpane label="Network" id="proxy" image="chrome://wrapper/content/images/network.png">
+        <preferences>
+            <preference id="proxy-type" type="int" name="network.proxy.type"/>
+            <preference id="proxy-auto-url" type="unichar" name="network.proxy.autoconfig_url"/>
+            <preference id="proxy-manual-url" type="unichar" name="network.proxy.http"/>
+            <preference id="proxy-manual-port" type="int" name="network.proxy.http_port"/>
+        </preferences>
+        <groupbox>
+            <caption label="Proxy settings" />
+            <radiogroup id="net-select" preference="proxy-type">
+                <radio value="0" label="Direct"/>
+                <vbox>
+                    <radio value="1" label="Manual"/>
+                    <hbox style="-moz-box-align:center">
+                        <textbox preference="proxy-manual-url" flex="1"/>
+                        <label value=":"/>
+                        <textbox preference="proxy-manual-port" width="50px"/>
+                    </hbox>
+                </vbox>
+                <vbox>
+                    <radio value="2" label="Automatic"/>
+                    <textbox preference="proxy-auto-url" />
+                </vbox>
+            </radiogroup>
+        </groupbox>
+     </prefpane>
+     <prefpane label="File paths" id="paths" image="chrome://wrapper/content/images/data.png">
 <script language="javascript"><![CDATA[
 function onPick(id, wantdir) {
     var tx = document.getElementById(id+"-path");

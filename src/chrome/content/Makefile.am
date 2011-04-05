@@ -1,4 +1,5 @@
-SUBDIRS=dialogs img
+SUBDIRS=dialogs
 contentdir=$(pkgdatadir)/chrome/content
+wrapperdir=$(pkgdatadir)/wrapper
 content_DATA=overlay.xul mot.xul general.js actions.js mot.js
-pkgdata_DATA=mot_wrapper.xul
+wrapper_DATA=mot_wrapper.xul

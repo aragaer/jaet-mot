@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+
+
+<window id="preferences" title="Api Keys"
+        flex="1" onload="on_api_load()"
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+<script type="application/x-javascript" src="chrome://mot/content/general.js"/>
+<script type="application/x-javascript" src="api.js"/>
+
+    <command id="API:Close" oncommand="close_api()"/>
+    <command id="API:Check" oncommand="check_data()"/>
+    <command id="API:Add" oncommand="add_acct()"/>
+    <command id="API:Remove" oncommand="remove_data()"/>
+    <command id="API:Remove2" oncommand="kill_data()"/>
+    <command id="API:Restore" oncommand="restore_data()"/>
+    <command id="API:Save" oncommand="save_data()"/>
+
+    <menupopup id="acct-list-menu">
+        <menuitem label="Add" command="API:Add"/>
+        <menuitem id="btn-save" label="Save" command="API:Save"/>
+        <menuitem id="btn-check" label="Check" command="API:Check"/>
+        <menuitem id="btn-remove" label="Remove" command="API:Remove"/>
+        <menuitem id="btn-remove2" label="Terminate" command="API:Remove2"/>
+        <menuitem id="btn-restore" label="Restore" command="API:Restore"/>
+    </menupopup>
+
+        <hbox flex="2">
+            <vbox flex="1">
+                <caption label="accounts"/>
+                <tree id="acct-list" flex="1" hidecolumnpicker="true" context="acct-list-menu">
+                    <treecols>
+                        <treecol id="img" hideheader="true"/>
+                        <treecol id="name" flex="10" hideheader="true"/>
+                    </treecols>
+                    <treechildren/>
+                </tree>
+            </vbox>
+            <splitter collapse="none" />
+            <vbox flex="1">
+                <caption label="characters" />
+                <listbox id="char-list" flex="1"/>
+            </vbox>
+        </hbox>
+        <grid>
+            <columns>
+                <column/>
+                <column/>
+                <column flex="1" />
+            </columns>
+            <rows>
+                <row style="-moz-box-align:center">
+                    <label style="width:10em" value="User ID:"/>
+                    <spacer width="32px"/>
+                    <textbox id="accountID" disabled="true"/>
+                </row>
+                <row style="-moz-box-align:center">
+                    <label style="width:10em" value="Limited key:"/>
+                    <image id="ltd_ok"/>
+                    <textbox id="keyLimited" disabled="true"/>
+                </row>
+                <row style="-moz-box-align:center">
+                    <label style="width:10em" value="Full key:"/>
+                    <image id="full_ok"/>
+                    <textbox id="keyFull" disabled="true"/>
+                </row>
+            </rows>
+        </grid>
+        <spacer flex="1" />
+        <hbox style="-moz-box-align:end">
+            <label class="api_status" value="" />
+            <spacer flex="1" />
+            <button label="Close" command="API:Close" />
+        </hbox>
+</window>

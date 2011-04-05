@@ -1,1 +1,1 @@
-SUBDIRS=content skin locale
+SUBDIRS=content skin locale wrapper

@@ -1,5 +1,5 @@
 content mot chrome/content/
-content wrapper .
+content wrapper wrapper/
 skin mot classic/1.0 chrome/skin/
 overlay chrome://jaet/content/jaet.xul chrome://mot/content/overlay.xul
 locale branding en-US chrome/locale/branding/

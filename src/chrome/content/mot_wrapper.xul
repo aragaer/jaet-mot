@@ -15,6 +15,7 @@
     <command id="File:Exit" oncommand="quit()"/>
     <command id="Settings:Preferences" oncommand="setupPreferences()"/>
     <command id="Tools:Plugins" oncommand="openExtManager()"/>
+    <command id="Tools:ApiKeys" oncommand="setupApiKeys()"/>
 
     <toolbar id="main-toolbar">
         <toolbaritem>
@@ -34,6 +35,9 @@
                         <menuitem label="Extensions"
                                   accesskey="x"
                                   command="Tools:Plugins"/>
+                        <menuitem label="Api Keys"
+                                  accesskey="a"
+                                  command="Tools:ApiKeys"/>
                     </menupopup>
                 </menu>
             </menubar>
