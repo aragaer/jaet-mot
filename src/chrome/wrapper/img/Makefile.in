@@ -32,7 +32,7 @@ POST_INSTALL = :
 NORMAL_UNINSTALL = :
 PRE_UNINSTALL = :
 POST_UNINSTALL = :
-subdir = src/chrome/content/img
+subdir = src/chrome/wrapper/img
 DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/configure.ac
@@ -64,8 +64,8 @@ am__nobase_list = $(am__nobase_strip_setup); \
 am__base_list = \
   sed '$$!N;$$!N;$$!N;$$!N;$$!N;$$!N;$$!N;s/\n/ /g' | \
   sed '$$!N;$$!N;$$!N;$$!N;s/\n/ /g'
-am__installdirs = "$(DESTDIR)$(imgdir)"
-DATA = $(img_DATA)
+am__installdirs = "$(DESTDIR)$(wrapperdir)"
+DATA = $(wrapper_DATA)
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 ACLOCAL = @ACLOCAL@
 AMTAR = @AMTAR@
@@ -144,8 +144,10 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-imgdir = $(pkgdatadir)/chrome/content/img
-img_DATA = close.png new_16.png present.png save_16.png missing.png open_16.png redo.png undo.png
+wrapperdir = $(pkgdatadir)/wrapper/images
+wrapper_DATA = close.png new_16.png present.png save_16.png \
+	missing.png open_16.png redo.png undo.png network.png data.png \
+	bad.png dead.png store.png restore.png ok.png loading.gif
 all: all-am
 
 .SUFFIXES:
@@ -158,9 +160,9 @@ $(srcdir)/Makefile.in:  $(srcdir)/Makefile.am  $(am__configure_deps)
 	      exit 1;; \
 	  esac; \
 	done; \
-	echo ' cd $(top_srcdir) && $(AUTOMAKE) --foreign src/chrome/content/img/Makefile'; \
+	echo ' cd $(top_srcdir) && $(AUTOMAKE) --foreign src/chrome/wrapper/img/Makefile'; \
 	$(am__cd) $(top_srcdir) && \
-	  $(AUTOMAKE) --foreign src/chrome/content/img/Makefile
+	  $(AUTOMAKE) --foreign src/chrome/wrapper/img/Makefile
 .PRECIOUS: Makefile
 Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
 	@case '$?' in \
@@ -179,26 +181,26 @@ $(top_srcdir)/configure:  $(am__configure_deps)
 $(ACLOCAL_M4):  $(am__aclocal_m4_deps)
 	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
 $(am__aclocal_m4_deps):
-install-imgDATA: $(img_DATA)
+install-wrapperDATA: $(wrapper_DATA)
 	@$(NORMAL_INSTALL)
-	test -z "$(imgdir)" || $(MKDIR_P) "$(DESTDIR)$(imgdir)"
-	@list='$(img_DATA)'; test -n "$(imgdir)" || list=; \
+	test -z "$(wrapperdir)" || $(MKDIR_P) "$(DESTDIR)$(wrapperdir)"
+	@list='$(wrapper_DATA)'; test -n "$(wrapperdir)" || list=; \
 	for p in $$list; do \
 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
 	  echo "$$d$$p"; \
 	done | $(am__base_list) | \
 	while read files; do \
-	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(imgdir)'"; \
-	  $(INSTALL_DATA) $$files "$(DESTDIR)$(imgdir)" || exit $$?; \
+	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(wrapperdir)'"; \
+	  $(INSTALL_DATA) $$files "$(DESTDIR)$(wrapperdir)" || exit $$?; \
 	done
 
-uninstall-imgDATA:
+uninstall-wrapperDATA:
 	@$(NORMAL_UNINSTALL)
-	@list='$(img_DATA)'; test -n "$(imgdir)" || list=; \
+	@list='$(wrapper_DATA)'; test -n "$(wrapperdir)" || list=; \
 	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
 	test -n "$$files" || exit 0; \
-	echo " ( cd '$(DESTDIR)$(imgdir)' && rm -f" $$files ")"; \
-	cd "$(DESTDIR)$(imgdir)" && rm -f $$files
+	echo " ( cd '$(DESTDIR)$(wrapperdir)' && rm -f" $$files ")"; \
+	cd "$(DESTDIR)$(wrapperdir)" && rm -f $$files
 tags: TAGS
 TAGS:
 
@@ -240,7 +242,7 @@ check-am: all-am
 check: check-am
 all-am: Makefile $(DATA)
 installdirs:
-	for dir in "$(DESTDIR)$(imgdir)"; do \
+	for dir in "$(DESTDIR)$(wrapperdir)"; do \
 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
 	done
 install: install-am
@@ -288,7 +290,7 @@ info: info-am
 
 info-am:
 
-install-data-am: install-imgDATA
+install-data-am: install-wrapperDATA
 
 install-dvi: install-dvi-am
 
@@ -332,7 +334,7 @@ ps: ps-am
 
 ps-am:
 
-uninstall-am: uninstall-imgDATA
+uninstall-am: uninstall-wrapperDATA
 
 .MAKE: install-am install-strip
 
@@ -340,12 +342,12 @@ uninstall-am: uninstall-imgDATA
 	distclean-generic distdir dvi dvi-am html html-am info info-am \
 	install install-am install-data install-data-am install-dvi \
 	install-dvi-am install-exec install-exec-am install-html \
-	install-html-am install-imgDATA install-info install-info-am \
-	install-man install-pdf install-pdf-am install-ps \
-	install-ps-am install-strip installcheck installcheck-am \
+	install-html-am install-info install-info-am install-man \
+	install-pdf install-pdf-am install-ps install-ps-am \
+	install-strip install-wrapperDATA installcheck installcheck-am \
 	installdirs maintainer-clean maintainer-clean-generic \
 	mostlyclean mostlyclean-generic pdf pdf-am ps ps-am uninstall \
-	uninstall-am uninstall-imgDATA
+	uninstall-am uninstall-wrapperDATA
 
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.

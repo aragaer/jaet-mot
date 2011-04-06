@@ -32,7 +32,17 @@ function charChanged() {
     charList.removeItemAt(charList.getIndexOfItem(unsel));
     Services.prefs.setIntPref("mot.selected_char", charList.value)
 
+    var end  = Date.now();
+    var start = 0; //end - 24*60*60*1000;
+    println("Transactions from "+Date(start)+" to "+Date(end));
+
     var trlist = Cc["@aragaer/eve/wallet/manager;1"].getService(Ci.nsIEveWalletManager).
-        getTransactionsForChar(chars[charList.value], Date.now() - 24*60*60, Date.now(), {});
+        getTransactionsForChar(chars[charList.value], start, end, {});
+
+    for each (var tr in trlist) {
+        println("Transaction: "+tr.typeID+" x"+tr.quantity+" "+
+            (tr.type == Ci.nsEveTransactionType.TYPE_BUY ? "bought" : "sold") +
+            " for " + tr.price + " each on "+tr.timestamp+" = "+(new Date(tr.timestamp)));
+    }
 }
 

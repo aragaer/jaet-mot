@@ -2202,7 +2202,7 @@ am__tar='${AMTAR} chof - "$$tardir"'; am__untar='${AMTAR} xf -'
 
 
 
-ac_config_files="$ac_config_files Makefile src/Makefile src/application.ini src/chrome/Makefile src/chrome/content/Makefile src/chrome/content/img/Makefile src/chrome/content/dialogs/Makefile src/chrome/locale/Makefile src/chrome/locale/branding/Makefile src/chrome/locale/en-US/Makefile src/chrome/skin/Makefile src/components/Makefile src/components/eve-api/Makefile src/defaults/Makefile src/defaults/preferences/Makefile"
+ac_config_files="$ac_config_files Makefile src/Makefile src/application.ini src/chrome/Makefile src/chrome/content/Makefile src/chrome/content/dialogs/Makefile src/chrome/locale/Makefile src/chrome/locale/branding/Makefile src/chrome/locale/en-US/Makefile src/chrome/skin/Makefile src/chrome/wrapper/Makefile src/chrome/wrapper/img/Makefile src/components/Makefile src/components/eve-api/Makefile src/defaults/Makefile src/defaults/preferences/Makefile"
 
 
 
@@ -3101,12 +3101,13 @@ do
     "src/application.ini") CONFIG_FILES="$CONFIG_FILES src/application.ini" ;;
     "src/chrome/Makefile") CONFIG_FILES="$CONFIG_FILES src/chrome/Makefile" ;;
     "src/chrome/content/Makefile") CONFIG_FILES="$CONFIG_FILES src/chrome/content/Makefile" ;;
-    "src/chrome/content/img/Makefile") CONFIG_FILES="$CONFIG_FILES src/chrome/content/img/Makefile" ;;
     "src/chrome/content/dialogs/Makefile") CONFIG_FILES="$CONFIG_FILES src/chrome/content/dialogs/Makefile" ;;
     "src/chrome/locale/Makefile") CONFIG_FILES="$CONFIG_FILES src/chrome/locale/Makefile" ;;
     "src/chrome/locale/branding/Makefile") CONFIG_FILES="$CONFIG_FILES src/chrome/locale/branding/Makefile" ;;
     "src/chrome/locale/en-US/Makefile") CONFIG_FILES="$CONFIG_FILES src/chrome/locale/en-US/Makefile" ;;
     "src/chrome/skin/Makefile") CONFIG_FILES="$CONFIG_FILES src/chrome/skin/Makefile" ;;
+    "src/chrome/wrapper/Makefile") CONFIG_FILES="$CONFIG_FILES src/chrome/wrapper/Makefile" ;;
+    "src/chrome/wrapper/img/Makefile") CONFIG_FILES="$CONFIG_FILES src/chrome/wrapper/img/Makefile" ;;
     "src/components/Makefile") CONFIG_FILES="$CONFIG_FILES src/components/Makefile" ;;
     "src/components/eve-api/Makefile") CONFIG_FILES="$CONFIG_FILES src/components/eve-api/Makefile" ;;
     "src/defaults/Makefile") CONFIG_FILES="$CONFIG_FILES src/defaults/Makefile" ;;
